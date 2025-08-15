@@ -12,6 +12,7 @@ use BadMethodCallException;
 use Wpb\String_Blade_Compiler\Factory;
 use PHPUnit\Framework\TestCase;
 use Illuminate\Support\MessageBag;
+use Illuminate\Support\ViewErrorBag;
 use Illuminate\Contracts\View\Engine;
 use Illuminate\Contracts\Support\Arrayable;
 use Illuminate\Contracts\Support\Renderable;
@@ -218,7 +219,7 @@ class ViewTest extends TestCase
         $view = $this->getView();
         $errors = ['foo' => 'bar', 'qu' => 'ux'];
         $this->assertSame($view, $view->withErrors($errors));
-        $this->assertInstanceOf(MessageBag::class, $view->errors);
+        $this->assertInstanceOf(ViewErrorBag::class, $view->errors);
         $foo = $view->errors->get('foo');
         $this->assertEquals($foo[0], 'bar');
         $qu = $view->errors->get('qu');

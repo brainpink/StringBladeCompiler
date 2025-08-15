@@ -1,6 +1,6 @@
 <?php
 
-namespace Wpb\String_Blade_Compiler\Tests\Blade;
+namespace Wpb\String_Blade_Compiler\Tests\View\Blade;
 
 class BladeEchoTest extends AbstractBladeTestCase
 {

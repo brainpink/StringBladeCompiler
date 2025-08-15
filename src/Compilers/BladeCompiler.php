@@ -6,6 +6,17 @@ use Illuminate\View\Compilers\BladeCompiler as BladeCompilerParent;
 
 class BladeCompiler extends BladeCompilerParent
 {
+    /**
+     * Create a new compiler instance.
+     *
+     * @param  \Illuminate\Filesystem\Filesystem  $files
+     * @param  string  $cachePath
+     * @return void
+     */
+    public function __construct($files, $cachePath)
+    {
+        parent::__construct($files, $cachePath);
+    }
 
     /**
      *  Switch to force template recompile

@@ -136,6 +136,7 @@ class ViewFactoryTest extends TestCase
         $factory->getFinder()->shouldReceive('find')->once()->with('view')->andReturn('path.foo');
         $factory->getEngineResolver()->shouldReceive('resolve')->once()->with('bar')->andReturn($engine = m::mock(Engine::class));
         $factory->getDispatcher()->shouldReceive('dispatch');
+        $factory->getDispatcher()->shouldReceive('hasListeners')->andReturn(false);
 
         $factory->addExtension('foo', 'bar', $resolver);
 
@@ -339,8 +340,9 @@ class ViewFactoryTest extends TestCase
     {
         $factory = $this->getFactory();
         $factory->getFinder()->shouldReceive('find')->andReturn(__DIR__.'/fixtures/component.php');
-        $factory->getEngineResolver()->shouldReceive('resolve')->andReturn(new PhpEngine);
+        $factory->getEngineResolver()->shouldReceive('resolve')->andReturn(new PhpEngine(new \Illuminate\Filesystem\Filesystem));
         $factory->getDispatcher()->shouldReceive('dispatch');
+        $factory->getDispatcher()->shouldReceive('hasListeners')->andReturn(false);
         $factory->startComponent('component', ['name' => 'Taylor']);
         $factory->slot('title');
         $factory->slot('website', 'laravel.com');
@@ -462,6 +464,7 @@ class ViewFactoryTest extends TestCase
         $factory->getFinder()->shouldReceive('find')->twice()->with('foo.bar')->andReturn('path.php');
         $factory->getEngineResolver()->shouldReceive('resolve')->twice()->with('php')->andReturn(m::mock(Engine::class));
         $factory->getDispatcher()->shouldReceive('dispatch');
+        $factory->getDispatcher()->shouldReceive('hasListeners')->andReturn(false);
         $factory->make('foo/bar');
         $factory->make('foo.bar');
     }
@@ -472,6 +475,7 @@ class ViewFactoryTest extends TestCase
         $factory->getFinder()->shouldReceive('find')->twice()->with('vendor/package::foo.bar')->andReturn('path.php');
         $factory->getEngineResolver()->shouldReceive('resolve')->twice()->with('php')->andReturn(m::mock(Engine::class));
         $factory->getDispatcher()->shouldReceive('dispatch');
+        $factory->getDispatcher()->shouldReceive('hasListeners')->andReturn(false);
         $factory->make('vendor/package::foo/bar');
         $factory->make('vendor/package::foo.bar');
     }

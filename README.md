@@ -1,6 +1,6 @@
 String Blade Compiler
 =======================
-[![Laravel 8](https://img.shields.io/badge/Laravel-8-orange.svg?style=flat-square)](http://laravel.com)
+[![Laravel 12](https://img.shields.io/badge/Laravel-12-orange.svg?style=flat-square)](http://laravel.com)
 [![License](http://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](https://tldrlegal.com/license/mit-license)
 
 Render Blade templates from string value.
@@ -11,20 +11,21 @@ Reworked version to allow for array to be passed to the view function instead of
 
 Versions
 =======================
-| String Blade  | Laravel Version | 
-| ------------- |----------------:|
-| 6.0           | Laravel 8       |
-| 5.0           | Laravel 7       |
-| 4.0           | Laravel 6       |
-| 3.8           | Laravel 5.8     |
-| 3.7           | Laravel 5.7     |
-| 3.6           | Laravel 5.6     |
-| 3.5           | Laravel 5.5     |
-| 3.4           | Laravel 5.4     |
-| 3.3           | Laravel 5.2     |
-| 3.2           | Laravel 5.1     |
-| 2.*           | Laravel 5       |
-| 1.*           | Laravel 4.2     |
+| String Blade  | Laravel Version | PHP Version |
+| ------------- |----------------:|------------:|
+| 6.0           | Laravel 10-12   | PHP 8.2+    |
+| 6.0 (legacy)  | Laravel 8       | PHP 7.2+    |
+| 5.0           | Laravel 7       | PHP 7.2+    |
+| 4.0           | Laravel 6       | PHP 7.2+    |
+| 3.8           | Laravel 5.8     | PHP 7.1+    |
+| 3.7           | Laravel 5.7     | PHP 7.1+    |
+| 3.6           | Laravel 5.6     | PHP 7.1+    |
+| 3.5           | Laravel 5.5     | PHP 7.0+    |
+| 3.4           | Laravel 5.4     | PHP 5.6+    |
+| 3.3           | Laravel 5.2     | PHP 5.6+    |
+| 3.2           | Laravel 5.1     | PHP 5.6+    |
+| 2.*           | Laravel 5       | PHP 5.6+    |
+| 1.*           | Laravel 4.2     | PHP 5.4+    |
 
 Version 3.8 : Updates
 =======================

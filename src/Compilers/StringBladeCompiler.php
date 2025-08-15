@@ -2,7 +2,7 @@
 
 namespace Wpb\String_Blade_Compiler\Compilers;
 
-use Config;
+use Illuminate\Support\Facades\Config;
 use Illuminate\Filesystem\Filesystem;
 use Illuminate\Support\Str;
 use Illuminate\View\Compilers\CompilerInterface;
@@ -24,8 +24,7 @@ class StringBladeCompiler extends BladeCompiler {
      */
     public function __construct(Filesystem $files, $cachePath)
     {
-        $this->files = $files;
-        $this->cachePath = $cachePath;
+        parent::__construct($files, $cachePath);
     }
 
     public function setViewData($viewData) {
